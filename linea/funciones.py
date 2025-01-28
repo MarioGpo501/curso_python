@@ -9,6 +9,8 @@ def calcular_y(x,m,b):
     '''
     return m*x+b
 
+
+
 if __name__ == "__main__":
     x = 0 
     m = 3
