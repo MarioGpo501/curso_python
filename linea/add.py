@@ -11,6 +11,7 @@ def main(m,b):
     print(Y)
     coordenadas = list(zip(X,Y))
     print(coordenadas)
+    funciones.grafica_linea(X,Y, m, b)
 
 
 
