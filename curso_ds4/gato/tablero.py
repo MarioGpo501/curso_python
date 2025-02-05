@@ -41,7 +41,7 @@ def usuario(simbolos:dict):
             print('Eliga un numero del 1 al 9')        
 
 def juego(simbolos:dict):
-    '''Juego del gato'''
+    ''' Juego del gato ''' 
     lista_combinaciones = [
         ['1','2','3'],
         ['4','5','6'],
@@ -56,22 +56,29 @@ def juego(simbolos:dict):
     dibuja_tablero(simbolos)
     movimientos = 0
     gana = None
-    while en_juego: 
+    while en_juego:
         usuario(simbolos)
         dibuja_tablero(simbolos)
         movimientos += 1
-        gana = checa_winner(simbolos, lista_combinaciones)
-        if gana is not None: 
+        gana = checa_winner(simbolos,lista_combinaciones)
+        if gana is not None:
             en_juego = False
             continue
         if movimientos >= 9:
-            en_juego: False
+            en_juego = False
             continue
         ia(simbolos)
         dibuja_tablero(simbolos)
         movimientos += 1
         gana = checa_winner(simbolos,lista_combinaciones)
+        if gana is not None:
+            en_juego = False
+            continue
+        if movimientos >= 9:
+            en_juego = False
+            continue
     return gana
+
 
 def checa_winner(simbolos:dict, combinaciones:list): 
     '''checa si hay un ganador'''
