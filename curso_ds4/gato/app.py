@@ -14,27 +14,14 @@ def main():
     score = {'X':X,'O':O}
 
     numeros = [str(i) for i in range(1,10)]
-    corriendo = True 
-
+    corriendo = True
     while corriendo is True:
         dsimbolos = {x:x for x in numeros}
         g = tablero.juego(dsimbolos)
-        if g is not None: 
-            print(f'El ganador es {g}')
-            if g == 'X':
-                X['G'] += 1
-                O['P'] += 1
-            elif g == 'O':
-                O['G'] += 1
-                X['P'] += 1
-            else: 
-                print('Empate')
-                X['E'] += 1
-                O['E'] += 1
-        else:
-            print('Empate')
-            X['E'] += 1
-            O['E'] += 1
+        tablero.actualizar_score(score,g)
+        tablero.despliega_tablero(score)
+
+
 
 if __name__ == '__main__':
     main()
