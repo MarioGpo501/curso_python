@@ -20,8 +20,9 @@ def main():
         g = tablero.juego(dsimbolos)
         tablero.actualizar_score(score,g)
         tablero.despliega_tablero(score)
-
-
+        seguir = input('Quieres seguir (s/n): ')
+        if seguir.lower() == 'n':
+            corriendo= False
 
 if __name__ == '__main__':
     main()
