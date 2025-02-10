@@ -1,24 +1,21 @@
 '''
-tablero.py : Dibuja el 
-tablero del juego del 
-gato
-
+tablero.py: Dibuja el tablero del juego del gato
 '''
-
-import random 
+import random
 
 def dibuja_tablero(simbolos:dict):
+    '''  Dibuja el tablero del juego de el gato '''
     print(f'''
     {simbolos['1']} | {simbolos['2']} | {simbolos['3']}
-    --------
+    ---------
     {simbolos['4']} | {simbolos['5']} | {simbolos['6']}
-    --------
+    ---------
     {simbolos['7']} | {simbolos['8']} | {simbolos['9']}
-''')
+    ''')
 
-def ia(simbolos:dict): 
-    '''Estrategia de la computadora'''
-    ocupado = True 
+def ia(simbolos:dict):
+    ''' Estrategia de la computadora'''
+    ocupado = True
     while ocupado is True:
         x = random.choice(list(simbolos.keys()))
         if simbolos[x] not in ['X','O']:
@@ -26,19 +23,19 @@ def ia(simbolos:dict):
             ocupado = False
 
 def usuario(simbolos:dict):
-    '''Estrategia del usuario'''
-    ocupado = True 
-    lista_numeros = [str(i) for i in range(1,10)]
+    ''' Estrategia del usuario '''
+    ocupado = True
+    lista_numeros = [str(i) for i in range(1,10)] #del 1 al 9
     while ocupado is True:
-        x = input('Elija un numero del 1 al 9: ')
+        x = input('Elija un número del 1 al 9: ')
         if x in lista_numeros:
-            if simbolos[x] not in ['X', 'O']:
+            if simbolos[x] not in ['X','O']:
                 simbolos[x] = 'X'
                 ocupado = False
-            else: 
+            else:
                 print('Esa casilla ya está ocupada')
-        else: 
-            print('Eliga un numero del 1 al 9')        
+        else:
+            print('Elija un número del 1 al 9')
 
 def juego(simbolos:dict):
     ''' Juego del gato ''' 
@@ -79,45 +76,39 @@ def juego(simbolos:dict):
             continue
     return gana
 
-
-def checa_winner(simbolos:dict, combinaciones:list): 
-    '''checa si hay un ganador'''
-    for c in combinaciones: 
+def checa_winner(simbolos:dict, combinaciones:list):
+    ''' Checa si hay un ganador '''
+    for c in combinaciones:
         if simbolos[c[0]] == simbolos[c[1]] == simbolos[c[2]]:
             return simbolos[c[0]]
     return None
 
-
-
-def actualizar_score(score:dict,ganador:str):
-        """ actualiza score """
-    X = score['X']
-    O = score['O']
-    if ganador is not None: 
+def actualiza_score(score:dict,ganador:str):
+    ''' Actualiza el score '''
+    X = score["X"]
+    O = score["O"]
+    if ganador is not None:
         print(f'El ganador es {ganador}')
         if ganador == 'X':
-            X['G'] += 1
-            O['P'] += 1
+            X["G"] += 1
+            O["P"] += 1
         elif ganador == 'O':
-            O['G'] += 1
-            X['P'] += 1
-        else: 
-            print('Empate')
-            X['E'] += 1
-            O['E'] += 1
+            O["G"] += 1
+            X["P"] += 1
+        else:
+            X["E"] += 1
+            O["E"] += 1
     else:
         print('Empate')
-        X['E'] += 1
-        O['E'] += 1
+        X["E"] += 1
+        O["E"] += 1
 
 def despliega_tablero(score:dict):
-    """ Despliega tablero score """
-
+    ''' Despliega el tablero de score '''
     print(f'''
-    X | G: {score['X']['G']} | P: {score 
-    ["X"] ['P']} | E: {score ['X']['E']} 
-    O | G: {score['O']['G']} | P: {score
-    ['O']['P']} | E: {score["O"]['X']}   )
+    X | G: {score["X"]["G"]} | P: {score["X"]["P"]} | E: {score["X"]["E"]}
+    O | G: {score["O"]["G"]} | P: {score["O"]["P"]} | E: {score["O"]["E"]}
+    ''')
 
 if __name__ == '__main__':
     numeros = [str(i) for i in range(1,10)]
@@ -125,11 +116,16 @@ if __name__ == '__main__':
     g = juego(dsimbolos)
     if g is not None:
         print(f'El ganador es {g}')
-    else: 
+    else:
         print('Empate')
-
-
-    ''' x = random.choice(numeros)
+    '''
+    dibuja_tablero(dsimbolos)
+    ia(dsimbolos)
+    dibuja_tablero(dsimbolos)
+    usuario(dsimbolos)
+    dibuja_tablero(dsimbolos)
+    
+    x = random.choice(numeros)
     numeros.remove(x)
     dsimbolos[x] = 'X'
     dibuja_tablero(dsimbolos)
@@ -137,5 +133,5 @@ if __name__ == '__main__':
     numeros.remove(o)
     dsimbolos[o] = 'O'
     dibuja_tablero(dsimbolos)
-    print(numeros)'''
-
+    print(numeros)
+    '''
