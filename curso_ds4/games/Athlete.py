@@ -8,6 +8,10 @@ class Athlete:
 
     def __repr__(self):
         return f"Athlete('{self.name}')"
+
+    def to_json(self)->dict:
+        """ Method to represent the class as a dictionary """
+        return {"name":self.name}  
     
     def display(self):
         print(f"{self.name}")
