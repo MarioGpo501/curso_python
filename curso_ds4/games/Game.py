@@ -36,6 +36,10 @@ class Game:
     def __str__(self):
         """ Metodo para representar la clase como string """
         return f"Game: {self.A.name}: {self.score[self.A.name]} - {self.B.name}: {self.score[self.B.name]}"
+    
+    def to_json(self):
+        """ Método para representar la clase como diccionario """
+        return {"A":self.A.to_json(), "B":self.B.to_json(), "score":self.score}
 
 if __name__ == "__main__": 
     dt = ['Jordan', 'Kobe', 'Lebron', 'Shaq', 'Curry']
@@ -49,7 +53,15 @@ if __name__ == "__main__":
     print(game)
     game.play()
     print(game)
-
+    print("-----------------")
+    print(repr(game))
+    print(game.to_json())
+    filename_json = "game.json"
+    with open(filename_json, "w", encoding="utf8") as f:
+        f.write(str(game.to_json()))
+    print(f"Archivo {filename_json} creado con éxito")
+    print("-----------------")
+    
         
 
         
