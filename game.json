@@ -1,0 +1,56 @@
+{
+    "A": {
+        "name": "Dream team",
+        "sport": {
+            "name": "Basketball",
+            "players": 5,
+            "league": "NBA"
+        },
+        "players": [
+            {
+                "name": "Jordan"
+            },
+            {
+                "name": "Kobe"
+            },
+            {
+                "name": "Lebron"
+            },
+            {
+                "name": "Shaq"
+            },
+            {
+                "name": "Curry"
+            }
+        ]
+    },
+    "B": {
+        "name": "Czeck Rep",
+        "sport": {
+            "name": "Basketball",
+            "players": 5,
+            "league": "NBA"
+        },
+        "players": [
+            {
+                "name": "Bjovik"
+            },
+            {
+                "name": "Kareem"
+            },
+            {
+                "name": "Magic"
+            },
+            {
+                "name": "Worthy"
+            },
+            {
+                "name": "Kobe"
+            }
+        ]
+    },
+    "score": {
+        "Dream team": 60,
+        "Czeck Rep": 54
+    }
+}

@@ -4,6 +4,7 @@ from Athlete import Athlete
 from Sport import Sport
 from Team import Team   
 from random import choice
+import json
 
 
 class Game: 
@@ -12,7 +13,8 @@ class Game:
             'NBA': [x for x in range(50,136)],
             'NFL': [x for x in range(0,61)],
             'MLB': [x for x in range(0,21)],
-            'MLX': [x for x in range(0,11)]
+            'MLX': [x for x in range(0,11)],
+            'FIFA': [x for x in range(0,11)],
         }
 
     """ clase game: Juego entre dos equipos """
@@ -58,7 +60,7 @@ if __name__ == "__main__":
     print(game.to_json())
     filename_json = "game.json"
     with open(filename_json, "w", encoding="utf8") as f:
-        f.write(str(game.to_json()))
+        json.dump(game.to_json(), f, ensure_ascii=False, indent=4)
     print(f"Archivo {filename_json} creado con éxito")
     print("-----------------")
     

@@ -1,0 +1,94 @@
+[
+    {
+        "A": {
+            "name": "Mexico",
+            "sport": {
+                "name": "Soccer",
+                "players": 11,
+                "league": "FIFA"
+            },
+            "players": [
+                {
+                    "name": "Chicharito"
+                },
+                {
+                    "name": "Piojo"
+                },
+                {
+                    "name": "Chucky"
+                },
+                {
+                    "name": "Tecatito"
+                },
+                {
+                    "name": "Gullit"
+                },
+                {
+                    "name": "Ochoa"
+                },
+                {
+                    "name": "Guardado"
+                },
+                {
+                    "name": "Herera"
+                },
+                {
+                    "name": "Layun"
+                },
+                {
+                    "name": "Moreno"
+                },
+                {
+                    "name": "Araujo"
+                }
+            ]
+        },
+        "B": {
+            "name": "España",
+            "sport": {
+                "name": "Soccer",
+                "players": 11,
+                "league": "FIFA"
+            },
+            "players": [
+                {
+                    "name": "Casillas"
+                },
+                {
+                    "name": "Ramos"
+                },
+                {
+                    "name": "Pique"
+                },
+                {
+                    "name": "Iniesta"
+                },
+                {
+                    "name": "Xavi"
+                },
+                {
+                    "name": "Villa"
+                },
+                {
+                    "name": "Torres"
+                },
+                {
+                    "name": "Silva"
+                },
+                {
+                    "name": "Busquets"
+                },
+                {
+                    "name": "Pedro"
+                },
+                {
+                    "name": "Fabregas"
+                }
+            ]
+        },
+        "score": {
+            "Mexico": 0,
+            "España": 0
+        }
+    }
+]
